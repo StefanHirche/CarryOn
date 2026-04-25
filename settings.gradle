@@ -13,8 +13,8 @@ pluginManagement {
             filter {
                 includeGroup('net.fabricmc')
                 includeGroup('net.fabricmc.unpick')
+                includeGroup('net.fabricmc.fabric-loom')
                 includeGroup('fabric-loom')
-                includeGroup('net.fabricmc.unpick')
             }
         }
         exclusiveContent {
@@ -60,5 +60,6 @@ if (System.getenv('BUILD_NUMBER') != null) {
 }
 
 rootProject.name = 'CarryOn'
-//include("Common", "Fabric", "NeoForge")
-include("Common", "Fabric", "Forge", "NeoForge")
+// 26.1.2 port: Fabric only — Forge and NeoForge subprojects disabled
+include("Common", "Fabric")
+//include("Common", "Fabric", "Forge", "NeoForge")

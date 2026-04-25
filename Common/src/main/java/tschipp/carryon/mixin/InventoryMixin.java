@@ -29,7 +29,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -39,9 +38,6 @@ import tschipp.carryon.common.carry.CarryOnDataManager;
 @Mixin(Inventory.class)
 public class InventoryMixin
 {
-	@Unique
-	private static final ItemStack DUMMY_STACK = new ItemStack(Blocks.COBBLESTONE, 1);
-
 	@Shadow
 	public Player player;
 
@@ -56,7 +52,7 @@ public class InventoryMixin
 	{
 		if(slot == selected && CarryOnDataManager.getCarryData(player).isCarrying())
 		{
-			return DUMMY_STACK;
+			return new ItemStack(Blocks.COBBLESTONE, 1);
 		}
 		else
 			return original.call(instance, slot);
