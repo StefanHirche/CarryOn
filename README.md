@@ -1,5 +1,12 @@
 # Carry On [![](http://cf.way2muchnoise.eu/carry-on.svg)](https://minecraft.curseforge.com/projects/carry-on) [![](http://cf.way2muchnoise.eu/versions/carry-on.svg)](https://minecraft.curseforge.com/projects/carry-on)
 
+> **Fork notice (LGPL §5a):** This is a modified version of [Tschipp/CarryOn](https://github.com/Tschipp/CarryOn), ported to **Minecraft 26.1.2 (Fabric)** by Stefan Hirche, since April 2026. Released under the same LGPL-3.0 license as the original.
+>
+> Differences from upstream:
+> - Targets MC 26.1.2 / Fabric API 0.146.1+ / Java 25 only — the Forge and NeoForge subprojects have been removed from this branch.
+> - Build switched to fabric-loom 1.16-SNAPSHOT and Gradle 9.4.1; the Java 17 / multi-loader instructions below describe the original setup and do not apply to this port.
+> - Known issue: enchantment-glint visual on carried blocks is currently absent (non-blocking, replacement for the removed `LayerRenderState.setRenderType` API still TODO).
+
 To use CarryOn in your projects, include this in your build.gradle:
 ```
 repositories {
